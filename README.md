@@ -29,11 +29,22 @@ The dataset is organized into **Training**, **Validation**, and **Testing** fold
 ### 5. Augmentation Visualization
 - Compared original vs augmented images side by side to verify transformations.  
 
+### 6. Baseline CNN Model
+- Built a simple CNN with:
+  - 4 convolutional layers (`32 → 64 → 128 → 256` filters).  
+  - Max pooling after each conv layer.  
+  - Flatten + Dense(256) + Dropout(0.3).  
+  - Output layer with 7 units (softmax).  
+- Compiled with **Adam optimizer** and **sparse categorical crossentropy loss**.  
+- Trained with early stopping and checkpointing on 20 epochs.  
+- Achieved:
+  - **Train Accuracy ~88%**  
+  - **Validation Accuracy ~85%**  
+  - **Test Accuracy ~86%**  
+
 ---
 
 ## ⏭️ Next Steps
-- Build a CNN model architecture (TensorFlow/Keras).  
-- Train the model using the preprocessed dataset.  
-- Evaluate on validation and test sets.  
-- Optimize with different architectures and hyperparameters.  
-- Document performance metrics and results.  
+- Move to **Transfer Learning** (EfficientNet, ResNet, MobileNet) for higher accuracy.  
+- Evaluate with confusion matrix and classification report.  
+- Optimize hyperparameters further.
